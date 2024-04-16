@@ -8,7 +8,7 @@ export default function LogoApp() {
                 <Link to="/">
                     <img
                         className="block h-16 w-auto my-3"
-                        src="/public/logo-black.png"
+                        src="/logo-black.png"
                         alt="streetkicks-logo"
                     />
                 </Link>
