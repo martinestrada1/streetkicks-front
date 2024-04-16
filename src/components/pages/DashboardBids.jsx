@@ -244,7 +244,7 @@ export default function DashboardBids() {
                                                                         <div className="text-gray-900">{bid._id}</div>
                                                                     </td>
                                                                     <td className="px-3 py-4 text-sm text-gray-500">
-                                                                        <img src={`/sneakers/${sneakers.find(sneaker => sneaker._id === bid.productId)?.brand}`} alt="tenis" className='h-auto w-96' />
+                                                                        <img src={`/sneakers/${sneakers.find(sneaker => sneaker._id === bid.productId)?.brand}`} alt="tenis" className='h-auto w-28' />
                                                                     </td>
                                                                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                                                                         <div className="text-gray-900">

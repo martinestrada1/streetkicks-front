@@ -228,6 +228,9 @@ export default function DashboardReserves() {
                                                                 Talla
                                                             </th>
                                                             <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
+                                                                Cantidad
+                                                            </th>
+                                                            <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
                                                                 Usuario
                                                             </th>
                                                             <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
@@ -249,7 +252,7 @@ export default function DashboardReserves() {
                                                                         <div className="text-gray-900">{reserves._id}</div>
                                                                     </td>
                                                                     <td className="px-3 py-4 text-sm text-gray-500">
-                                                                        <img src={`/sneakers/${sneakers.find(sneaker => sneaker._id === reserves.productId)?.brand}`} alt="tenis" className='h-auto w-96' />
+                                                                        <img src={`/sneakers/${sneakers.find(sneaker => sneaker._id === reserves.productId)?.brand}`} alt="tenis" className='h-auto w-28' />
                                                                     </td>
                                                                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                                                                         <div className="text-gray-900">
@@ -261,6 +264,9 @@ export default function DashboardReserves() {
                                                                     </td>
                                                                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                                                                         <div className="text-gray-900">{reserves.talla}</div>
+                                                                    </td>
+                                                                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                                                                        <div className="text-gray-900">{reserves.cantidad}</div>
                                                                     </td>
                                                                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                                                                         <div className="text-gray-900">
