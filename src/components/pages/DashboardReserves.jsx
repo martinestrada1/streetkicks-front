@@ -87,7 +87,7 @@ export default function DashboardReserves() {
                                                 to='/'>
                                                 <img
                                                     className="h-8 w-auto cursor-pointer"
-                                                    src="/public/logo-black.png"
+                                                    src="/logo-black.png"
                                                     alt="Your Company"
                                                 />
                                             </Link>
@@ -121,7 +121,7 @@ export default function DashboardReserves() {
                                             <div>
                                                 <img
                                                     className="inline-block h-10 w-10 rounded-full"
-                                                    src="/public/merr.jpeg"
+                                                    src="/merr.jpeg"
                                                     alt=""
                                                 />
                                             </div>
@@ -144,7 +144,7 @@ export default function DashboardReserves() {
                                     to='/'>
                                     <img
                                         className="h-14 w-auto cursor-pointer"
-                                        src="/public/logo-black.png"
+                                        src="logo-black.png"
                                         alt="Your Company"
                                     />
                                 </Link>
@@ -176,7 +176,7 @@ export default function DashboardReserves() {
                                 <div>
                                     <img
                                         className="inline-block h-9 w-9 rounded-full"
-                                        src="/public/merr.jpeg"
+                                        src="/merr.jpeg"
                                         alt=""
                                     />
                                 </div>
@@ -249,7 +249,7 @@ export default function DashboardReserves() {
                                                                         <div className="text-gray-900">{reserves._id}</div>
                                                                     </td>
                                                                     <td className="px-3 py-4 text-sm text-gray-500">
-                                                                        <img src={`/public/sneakers/${sneakers.find(sneaker => sneaker._id === reserves.productId)?.brand}`} alt="tenis" className='h-auto w-96' />
+                                                                        <img src={`/sneakers/${sneakers.find(sneaker => sneaker._id === reserves.productId)?.brand}`} alt="tenis" className='h-auto w-96' />
                                                                     </td>
                                                                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                                                                         <div className="text-gray-900">

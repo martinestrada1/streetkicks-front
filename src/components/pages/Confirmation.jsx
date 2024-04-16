@@ -72,12 +72,12 @@ export default function Confirmation() {
                 <div className="mx-auto justify-center flex max-w-2xl px-4 lg:w-full lg:max-w-lg lg:px-0">
                     <Link to="/">
                         <img
-                            src="/public/logo-white.png"
+                            src="/logo-white.png"
                             alt=""
                             className="h-20 w-auto lg:hidden"
                         />
                         <img
-                            src="/public/logo-black.png"
+                            src="/logo-black.png"
                             alt=""
                             className="hidden h-20 w-auto lg:block"
                         />
@@ -103,7 +103,7 @@ export default function Confirmation() {
                             {products.map((item) => (
                                 <li key={product._id} className="flex items-start space-x-4 py-6">
                                     <img
-                                        src={`/public/sneakers/${product.brand}`}
+                                        src={`/sneakers/${product.brand}`}
                                         alt={product.name}
                                         className="h-20 w-auto flex-none rounded-md object-cover object-center"
                                     />

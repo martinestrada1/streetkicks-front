@@ -79,7 +79,7 @@ export default function DashboardUSers() {
                                         <div className="flex flex-shrink-0 items-center px-4">
                                             <img
                                                 className="h-8 w-auto"
-                                                src="/public/logo-black.png"
+                                                src="/logo-black.png"
                                                 alt="Your Company"
                                             />
                                         </div>
@@ -112,7 +112,7 @@ export default function DashboardUSers() {
                                             <div>
                                                 <img
                                                     className="inline-block h-9 w-9 rounded-full"
-                                                    src="/public/merr.jpeg"
+                                                    src="/merr.jpeg"
                                                     alt=""
                                                 />
                                             </div>
@@ -137,7 +137,7 @@ export default function DashboardUSers() {
                                     to='/'>
                                     <img
                                         className="h-14 w-auto cursor-pointer"
-                                        src="/public/logo-black.png"
+                                        src="/logo-black.png"
                                         alt="Your Company"
                                     />
                                 </Link>
@@ -169,7 +169,7 @@ export default function DashboardUSers() {
                                 <div>
                                     <img
                                         className="inline-block h-9 w-9 rounded-full"
-                                        src="/public/merr.jpeg"
+                                        src="/merr.jpeg"
                                         alt=""
                                     />
                                 </div>
