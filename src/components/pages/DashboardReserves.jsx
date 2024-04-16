@@ -144,7 +144,7 @@ export default function DashboardReserves() {
                                     to='/'>
                                     <img
                                         className="h-14 w-auto cursor-pointer"
-                                        src="logo-black.png"
+                                        src="/logo-black.png"
                                         alt="Your Company"
                                     />
                                 </Link>
