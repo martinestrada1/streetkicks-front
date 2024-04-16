@@ -10,7 +10,7 @@ export default function Footer() {
                         <div className="flex justify-center items-center">
                             <img
                                 className="h-36 w-auto"
-                                src="/public/logo-white.png"
+                                src="/logo-white.png"
                                 alt="Company name"
                             />
                         </div>
