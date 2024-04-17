@@ -88,7 +88,7 @@ export default function Confirmation() {
                 <h1 className="sr-only">Resumen</h1>
                 <section
                     aria-labelledby="summary-heading"
-                    className="bg-[#2d2d2d] pt-6 pb-12 text-[#35ab82] md:px-10 lg:col-start-2 lg:row-start-1 lg:mx-auto lg:w-full lg:max-w-lg lg:bg-transparent lg:px-0 lg:pt-0 lg:pb-24"
+                    className="bg-[#2d2d2d] pt-6 pb-12 text-[#25589f] md:px-10 lg:col-start-2 lg:row-start-1 lg:mx-auto lg:w-full lg:max-w-lg lg:bg-transparent lg:px-0 lg:pt-0 lg:pb-24"
                 >
                     <div className="mx-auto max-w-2xl px-4 lg:max-w-none lg:px-0">
                         <dl>
@@ -108,7 +108,7 @@ export default function Confirmation() {
                                         className="h-20 w-auto flex-none rounded-md object-cover object-center"
                                     />
                                     <div className="flex-auto space-y-1">
-                                        <h3 className="text-white">{product.name}<span className="text-[#35ab82]"> x  {productReserved.cantidad}</span></h3>
+                                        <h3 className="text-white">{product.name}<span className="text-[#25589f]">  x  {productReserved.cantidad}</span></h3>
                                         <p>Talla: {productReserved.talla} MX</p>
                                     </div>
                                     <p className="flex-none text-base font-medium text-white">{product.price.toLocaleString('es-MX', {
@@ -171,7 +171,7 @@ export default function Confirmation() {
                                             autoComplete="off"
                                             required
                                             value={userLogged.email}
-                                            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-[#2e8667] focus:ring-[#2e8667] sm:text-sm"
+                                            className="block w-full rounded-md border-gray-300 shadow-sm focus:border-[#25589f] focus:ring-[#25589f] sm:text-sm"
                                         />
                                     </div>
                                 </div>
@@ -185,7 +185,7 @@ export default function Confirmation() {
                                 <button
                                     onClick={handleSubmit}
                                     type="submit"
-                                    className="rounded-md border border-transparent bg-[#35ab82] py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-[#2e8667] focus:outline-none focus:ring-2 focus:ring-[#2e8667] focus:ring-offset-2 focus:ring-offset-gray-50 duration-300"
+                                    className="rounded-md border border-transparent bg-[#25589f] py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-[#3f6395] focus:outline-none focus:ring-2 focus:ring-[#2e8667] focus:ring-offset-2 focus:ring-offset-gray-50 duration-300"
                                 >
                                     Apartar
                                 </button>

@@ -18,7 +18,7 @@ const TallasMenu = ({ onSelectSize }) => {
         <div className="relative w-full">
             <div
                 onClick={handleToggle}
-                className="flex text-gray-500 cursor-pointer border border-gray-800 justify-between"
+                className="flex text-gray-500 cursor-pointer border border-gray-800 justify-between rounded-md"
             >
                 <div className='p-2 ml-2 border-gray-900'>
                     {size}

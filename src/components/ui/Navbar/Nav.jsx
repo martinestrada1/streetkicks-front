@@ -4,7 +4,7 @@ import { navigation } from '../../../utilities/navigation'
 import { Link } from 'react-router-dom'
 import ButtonWhite from '../ButtonLogin'
 import ButtomBlack from '../ButtonRegister'
-import BellButton from '../BellButton'
+import ShoppingBag from '../ShoppingBagButton'
 import LogoApp from '../LogoApp'
 import SearchInput from './SearchInput'
 
@@ -37,7 +37,9 @@ export default function Nav(props) {
                             >
                                 {item.name}</Link>)
                     })}
-                    <BellButton />
+                    <Link to="/Cart" className='mx-4'>
+                        <ShoppingBag />
+                    </Link>
                     {logged || adminLogged ? <> <ArrowLeftStartOnRectangleIcon className='w-auto h-6 text-red-500 mx-2 ml-4 cursor-pointer hover:animate-pulse hover:text-red-700 duration-300' onClick={handleLogout} /> <ButtomBlack text="Registrarse" /> </> : <div><ButtonWhite text="Entrar" /> <ButtomBlack text="Registrarse" /></div>}
                     {adminLogged ?
                         <Link

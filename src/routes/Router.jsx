@@ -14,6 +14,7 @@ import DashboardBids from '../components/pages/DashboardBids';
 import DashboardReserves from '../components/pages/DashboardReserves';
 import LoginAdmin from '../components/pages/LoginAdmin';
 import Confirmation from '../components/pages/Confirmation';
+import Cart from '../components/pages/Cart';
 
 export default function Router() {
     return (
@@ -24,6 +25,7 @@ export default function Router() {
                     <Route path="/" element={<Home/>} />
                     <Route path="/login" element={<Login/>} />
                     <Route path="/login/admin" element={<LoginAdmin/>} />
+                    <Route path="/cart" element={<Cart/>} />
                     <Route path="/register" element={<Register/>} />
                     <Route path="/help" element={<Help/>} />
                     <Route path="/dashboard/users" element={<DashboardUSers/>} />
