@@ -33,7 +33,7 @@ export default function Cart() {
             const reservesExisted = reserves.filter(reserve => reserve.userId === userLogged.userId);
             setReservesByUser(reservesExisted)
         }
-    },[])
+    })
 
     const handleDelete = (id) => {
         axios.delete(`/api/apartado/${id}`)
