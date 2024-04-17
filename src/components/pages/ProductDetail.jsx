@@ -1,8 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import Navbar from '../ui/Navbar/Navbar';
-import { HeartIcon, ArrowUpOnSquareIcon, ShoppingBagIcon, CheckBadgeIcon } from '@heroicons/react/24/outline';
+import { HeartIcon, ArrowUpOnSquareIcon, ShoppingBagIcon } from '@heroicons/react/24/outline';
 import { HeartIcon as HeartIconSolid } from '@heroicons/react/24/solid';
-import { PlayIcon } from '@heroicons/react/20/solid';
 import Footer from '../ui/Footer/Footer';
 import TallasMenu from '../ui/TallasMenu';
 import { useState } from 'react';

@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 import axios from '../../libs/axios'
 import Notificacion from '../ui/Notificacion'
 import { useState } from 'react'
+import Page404 from './404'
 
 export default function Cart() {
     const { sneakers } = useGetSneakers();
@@ -16,6 +17,19 @@ export default function Cart() {
     const userLogged = JSON.parse(localStorage.getItem('loggedIn'));
 
     const reservesByUser = reserves.filter(reserve => reserve.userId === userLogged.userId);
+
+    if (!userLogged) {
+        return (
+            <>
+                <Navbar />
+                <main className='py-60 px-3 sm:px-14 lg:px-20 xl:px-40 flex justify-center items-center flex-col space-y-6'>
+                    <h3 className='text-gray-500'>Por favor inicia sesión para entrar en este apartado</h3>
+                    <ButtonWhite text="Ingresar" />
+                </main>
+                <Footer />
+            </>
+        );
+    }
 
     const handleDelete = (id)=>{
         axios.delete(`/api/apartado/${id}`)
