@@ -73,7 +73,7 @@ export default function Cart() {
     return (
         <>
             <Navbar />
-            <main className="bg-white h-screen">
+            <main className="bg-white h-full min-h-screen">
                 {notificaciones.map((notificacion, index) => (
                     <Notificacion
                         key={index}
