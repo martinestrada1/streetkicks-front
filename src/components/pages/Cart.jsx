@@ -6,7 +6,7 @@ import { useGetReserves } from '../../hooks/useGetReserves'
 import { Link } from 'react-router-dom'
 import axios from '../../libs/axios'
 import Notificacion from '../ui/Notificacion'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import ButtonWhite from '../ui/ButtonLogin'
 
 export default function Cart() {
@@ -17,48 +17,50 @@ export default function Cart() {
     const userLogged = JSON.parse(localStorage.getItem('loggedIn'));
     const [reservesByUser, setReservesByUser] = useState([]);
 
-    if (!userLogged) {
+    useEffect(() => {
+        if (!userLogged) {
+            return (
+                <>
+                    <Navbar />
+                    <main className='py-60 px-3 sm:px-14 lg:px-20 xl:px-40 flex justify-center items-center flex-col space-y-6'>
+                        <h3 className='text-gray-500'>Por favor inicia sesión para entrar en este apartado</h3>
+                        <ButtonWhite text="Ingresar" />
+                    </main>
+                    <Footer />
+                </>
+            );
+        } else {
+            const reservesExisted = reserves.filter(reserve => reserve.userId === userLogged.userId);
+            setReservesByUser(reservesExisted)
+        }
+    },[])
+
+    const handleDelete = (id) => {
+        axios.delete(`/api/apartado/${id}`)
+            .then(function (response) {
+                console.log(response)
+                setShow(true);
+                setNotificaciones(prevNotificaciones => [...prevNotificaciones, {
+                    title: response.data.message,
+                    subtitle: "Redireccionando, por favor espere un momento...",
+                    icon: true
+                }]);
+                setTimeout(() => {
+                    window.location.reload();
+                }, 3000);
+            }).catch(function (error) {
+                setShow(true);
+                setNotificaciones(prevNotificaciones => [...prevNotificaciones, {
+                    title: response.data.message,
+                    subtitle: "Inténtelo nuevamente...",
+                    icon: true
+                }]);
+            })
+    }
+    if (reservesByUser.length == 0) {
         return (
             <>
                 <Navbar />
-                <main className='py-60 px-3 sm:px-14 lg:px-20 xl:px-40 flex justify-center items-center flex-col space-y-6'>
-                    <h3 className='text-gray-500'>Por favor inicia sesión para entrar en este apartado</h3>
-                    <ButtonWhite text="Ingresar" />
-                </main>
-                <Footer />
-            </>
-        );
-    }else{
-        const reservesExisted = reserves.filter(reserve => reserve.userId === userLogged.userId);
-        setReservesByUser(reservesExisted)
-    }
-
-    const handleDelete = (id)=>{
-        axios.delete(`/api/apartado/${id}`)
-        .then(function(response){
-            console.log(response)
-            setShow(true);
-            setNotificaciones(prevNotificaciones => [...prevNotificaciones, {
-                title: response.data.message,
-                subtitle: "Redireccionando, por favor espere un momento...",
-                icon: true
-            }]);
-            setTimeout(() => {
-                window.location.reload();
-            }, 3000);
-        }).catch(function(error){
-            setShow(true);
-            setNotificaciones(prevNotificaciones => [...prevNotificaciones, {
-                title: response.data.message,
-                subtitle: "Inténtelo nuevamente...",
-                icon: true
-            }]);
-        })
-    }
-    if(reservesByUser.length == 0){
-        return(
-            <>
-                <Navbar/>
                 <main className='h-screen flex items-center justify-center'>
                     <h3>Lo sentimos, aún no tienes apartados disponibles.</h3>
                 </main>
@@ -72,7 +74,7 @@ export default function Cart() {
         <>
             <Navbar />
             <main className="bg-white h-screen">
-            {notificaciones.map((notificacion, index) => (
+                {notificaciones.map((notificacion, index) => (
                     <Notificacion
                         key={index}
                         isActive={show}
@@ -120,7 +122,7 @@ export default function Cart() {
                                                     <span>{product.inStock ? 'In stock' : `Apartado`}</span>
                                                 </p>
                                                 <div className="ml-4">
-                                                    <button onClick={() => handleDelete(product._id)}  type="button" className="text-sm font-medium text-indigo-600 hover:text-indigo-500">
+                                                    <button onClick={() => handleDelete(product._id)} type="button" className="text-sm font-medium text-indigo-600 hover:text-indigo-500">
                                                         <span>Remove</span>
                                                     </button>
                                                 </div>
