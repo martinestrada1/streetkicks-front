@@ -59,13 +59,13 @@ export default function Cart() {
     }
     if (reservesByUser.length == 0) {
         return (
-            <>
+            <div onLoad={() => window.scrollTo(0, 0)}>
                 <Navbar />
                 <main className='h-screen flex items-center justify-center'>
                     <h3>Lo sentimos, aún no tienes apartados disponibles.</h3>
                 </main>
                 <Footer />
-            </>
+            </div>
         )
     }
 
