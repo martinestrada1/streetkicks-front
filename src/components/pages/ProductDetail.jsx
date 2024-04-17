@@ -49,6 +49,18 @@ export default function ProductDetail() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if(!userLogged){
+            setShow(true);
+            setNotificaciones(prevNotificaciones => [...prevNotificaciones, {
+                title: "Inicia sesión antes de apartar",
+                subtitle: "Redireccionando al inicio",
+                icon: false
+            }]);
+            setTimeout(() => {
+                navigate("/");
+            }, 3000);
+            return
+        }
         if (selectedSize === null) {
             setShow(true);
             setNotificaciones(prevNotificaciones => [...prevNotificaciones, {
