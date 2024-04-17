@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 import axios from '../../libs/axios'
 import Notificacion from '../ui/Notificacion'
 import { useState } from 'react'
-import Page404 from './404'
+import ButtonWhite from '../ui/ButtonLogin'
 
 export default function Cart() {
     const { sneakers } = useGetSneakers();
