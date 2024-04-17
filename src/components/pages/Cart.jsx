@@ -15,8 +15,7 @@ export default function Cart() {
     const [notificaciones, setNotificaciones] = useState([]);
     const [show, setShow] = useState(false);
     const userLogged = JSON.parse(localStorage.getItem('loggedIn'));
-
-    const reservesByUser = reserves.filter(reserve => reserve.userId === userLogged.userId);
+    const [reservesByUser, setReservesByUser] = useState([]);
 
     if (!userLogged) {
         return (
@@ -29,6 +28,9 @@ export default function Cart() {
                 <Footer />
             </>
         );
+    }else{
+        const reservesExisted = reserves.filter(reserve => reserve.userId === userLogged.userId);
+        setReservesByUser(reservesExisted)
     }
 
     const handleDelete = (id)=>{
